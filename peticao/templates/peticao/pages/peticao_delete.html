@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+{% include 'peticao/partials/navbar.html' %}
+
+<div class="alert alert-danger" role="alert">
+    <form method="post">{% csrf_token %}
+        <h4 class="alert-heading">Alerta</h4>
+        <p>Deseja Realmente Apagar "{{ object }}" ?</p>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </form>
+        
+  </div>
+{% endblock content %}

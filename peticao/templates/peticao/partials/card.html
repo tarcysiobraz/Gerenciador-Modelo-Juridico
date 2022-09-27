@@ -1,0 +1,21 @@
+<div class="card ">
+    <div class="card-header ">
+      {{peticao.name}}
+    </div>
+    <div class="card-body">
+      <p class="card-title">Categoria: {{peticao.category}}</p>
+      <p>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Descrição
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+         {{peticao.description}}
+        </div>
+      </div>
+      <a href="{% url 'peticao' peticao.id %}" class="btn btn-primary">Ver Mais</a>
+      <a type="button" class="btn btn-danger" href={% url 'peticao_delete' peticao.id %}>Apagar</a>
+    </div>
+    
+  </div>

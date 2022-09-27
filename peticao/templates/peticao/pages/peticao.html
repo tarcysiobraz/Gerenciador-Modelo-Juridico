@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+{% include 'peticao/partials/navbar.html' %}
+<div class="container mt-4  ">
+<h1>Título - {{peticao.name}}</h1> 
+    
+    <form action="{% url 'peticao' peticao.id %}" method="POST">
+        {% bootstrap_messages %}
+        {% csrf_token %}
+        {% bootstrap_form form  %}
+        {% bootstrap_button "Salvar" button_type="submit" button_class="btn-primary" %}
+
+
+    </form>
+</div>
+{% endblock content %}
